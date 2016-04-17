@@ -32,7 +32,6 @@
 						Shipping Address
 					</div>
 					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</div>
 				</div>
 			</div>
@@ -46,7 +45,6 @@
 						Shipping Address
 					</div>
 					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</div>
 				</div>
 			</div>
@@ -57,14 +55,39 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Need</div>
 			<div class="panel-body">
+				
+				<button style="margin: 0px" type="button" class="btn btn-primary">+</button>
+				
 				<div class="panel panel-default">
 					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<div class ="col-lg-3">
+								<img src="images\eea.png">
+							</div>
+							<div class ="col-lg-8">
+								Title </br>
+								Author </br>
+								ISBN </br>
+							</div>
+							<div class="col-lg-1">
+								<img style ="margin-top:25px" src="images\pencil.png">
+								<img style ="margin-top:25px" src="images\xbutton.png">
+							</div>
 					</div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<div class ="col-lg-3">
+								<img src="images\eea.png">
+							</div>
+							<div class ="col-lg-8">
+								Title </br>
+								Author </br>
+								ISBN </br>
+							</div>
+							<div class="col-lg-1">
+								<img style ="margin-top:25px" src="images\pencil.png">
+								<img style ="margin-top:25px" src="images\xbutton.png">
+							</div>
 					</div>
 				</div>
 			</div>
@@ -74,14 +97,39 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Have</div>
 			<div class="panel-body">
+			
+			<button type="button" class="btn btn-primary">+</button>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<div class ="col-lg-3">
+								<img src="images\eea.png">
+							</div>
+							<div class ="col-lg-8">
+								Title </br>
+								Author </br>
+								ISBN </br>
+							</div>
+							<div class="col-lg-1">
+								<img style ="margin-top:25px" src="images\pencil.png">
+								<img style ="margin-top:25px" src="images\xbutton.png">
+							</div>
 					</div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						
+							<div class ="col-lg-3">
+								<img src="images\eea.png">
+							</div>
+							<div class ="col-lg-8">
+								Title </br>
+								Author </br>
+								ISBN </br>
+							</div>
+							<div class="col-lg-1">
+								<img style ="margin-top:25px" src="images\pencil.png">
+								<img style ="margin-top:25px" src="images\xbutton.png">
+							</div>
 					</div>
 				</div>
 			</div>
