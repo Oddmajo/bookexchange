@@ -1,0 +1,198 @@
+body{
+	background-image:  url(images/baseball.png);
+	background-repeat: no-repeat;
+	background-color: #333333;
+}
+.content{
+	width: 100%;
+	min-width: 1875px;
+}
+.main {
+    display: inline-block;
+    width: 70%;
+	min-width: 1250px;
+    margin: 45px auto;
+}
+.bg-left {
+    height: 100%;
+    width: 15%;
+	min-width: 150px;
+    float:left;
+    background-size: cover;
+	overflow: hidden;
+}
+.bg-right {
+    height: 100%;
+    width: 15%;
+	min-width: 150px;
+    float: right;
+    background-size: cover;
+	overflow: hidden;
+}
+
+.trainersegment{
+	background-color: #434343;
+	border: solid;
+	border-color: #666666;
+	height: 500px;
+	margin-bottom: 50px;
+}
+.sidebarsegment{
+	background-color: #434343;
+	border: solid;
+	border-color: #666666;
+	width: 100%;
+	height: 510px;
+}
+
+.space {
+    margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left:15px;
+	margin-right: 15px;
+    display: block;
+}
+
+.profilepicture{
+	width: 25%;
+	height: 300px;
+	float: left;
+}
+.basestatistics{
+	width: 74%;
+	height: 300px;
+	float: right;
+}
+
+img.players {
+	border: solid;
+	border-color: #666666;
+}
+img.vid{
+	width: 100%;
+	border: solid;
+	border-color: #666666;
+}
+img.sidebar{
+	height: 25px;
+}
+
+p{
+	font-size: 16pt;
+	color: white;
+}
+
+h1 {
+    margin: 0;
+	border: solid #666666;
+	padding: 5px;
+	color: white;
+	background-color: #434343;
+	font-size: 14pt;
+	font-family: 'Russo One', sans-serif;
+	text-transform: uppercase;
+}
+
+ul.days{
+	width: 100%;
+	overflow: hidden;
+}
+ul.days > li{
+	width: 14%;
+	font-family: 'Russo One', sans-serif;
+	padding: 2px;
+	font-size: 12pt;
+	line-height:1.5em;
+	text-align: center;
+	float:left;
+	display:inline;
+	color: white;
+	height: 100px;
+	background-color: #434343;
+	border: 1px solid #666666;
+}
+ul.schedule{
+	width: 100%;
+	overflow: hidden;
+	float: left;
+}
+ul.schedule > li{
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	font-size: 10pt;
+	line-height:1.5em;
+	float:left;
+	text-align: left;
+	display:inline;
+	color: white;
+}
+
+
+ul.sidebar{
+	width:100%;
+	margin-bottom:20px;
+	padding: 10px;
+	overflow:hidden;
+}
+ul.sidebar > li{
+	background-color: #434343;
+	border: 1px solid #666666;
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	padding: 5px;
+	font-size: 12pt;
+	line-height:1.5em;
+	float:left;
+	display:inline;
+	margin-bottom: 15px;
+	color: white;
+}
+
+ul.sidebar > li > a{
+	color: white;
+}
+
+ul.name{
+	padding: 10px;
+	font-size: 20pt;
+	color: white;
+	font-family: 'Russo One', sans-serif;
+	text-transform: uppercase;
+	margin: 20px;
+	font-style: italic;
+  
+}
+ul.name > li{
+	width: 50%;
+	background-color: #029EDC;
+	padding: 5px;
+	font-size: 16pt;
+	line-height:1.5em;
+	height: 40px;
+	float:left;
+	display:inline;
+	text-align: center;
+	vertical-align: middle;
+}
+ul.name > li.small{
+	width: 20%;
+	background-color: #029EDC;
+	padding: 5px;
+	font-size: 11pt;
+	line-height:1.5em;
+	padding-top: 10px;
+	height: 40px;
+	float:left;
+	display:inline;
+	text-align: center;
+	vertical-align: middle;
+}
+ul.name > li > a{
+	color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+ul.name > li > a:hover{
+	border: 1px solid white;
+	text-decoration: none;
+}

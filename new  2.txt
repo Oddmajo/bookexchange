@@ -1,0 +1,14 @@
+http://registry.gimp.org/node/15852 
+Element to Specity=Point to Point
+Length of lement=94
+Orientation=Horizontal
+Width=1(px)
+Horizontal Offset=0.5 or 1.0
+Verticall Offset=0.5 or 1.0
+Color= Whatever You Want (black is best visibility)
+
+
+
+
+66 - steam (disadvantage on sneak)
+81 - chainmail +2
