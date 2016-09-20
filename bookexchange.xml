@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.3.11
+- http://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Sep 20, 2016 at 11:49 PM
+- Server version: 5.6.24
+- PHP Version: 5.6.8
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="bookexchange" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="book">
+                CREATE TABLE `book` (
+                  `book_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `title` varchar(255) DEFAULT NULL,
+                  `author(s)` varchar(255) DEFAULT NULL,
+                  `edition` varchar(255) DEFAULT NULL,
+                  `ISBN` int(11) DEFAULT NULL,
+                  PRIMARY KEY (`book_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="have">
+                CREATE TABLE `have` (
+                  `have_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `notes` varchar(255) DEFAULT NULL,
+                  `course_number` int(11) DEFAULT NULL,
+                  `course_section` int(11) DEFAULT NULL,
+                  `user_id` int(11) NOT NULL,
+                  `book_id` int(11) NOT NULL,
+                  PRIMARY KEY (`have_id`),
+                  KEY `RefUser28` (`user_id`),
+                  KEY `RefBook30` (`book_id`),
+                  CONSTRAINT `RefBook30` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`),
+                  CONSTRAINT `RefUser28` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="major">
+                CREATE TABLE `major` (
+                  `major_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `major` varchar(255) DEFAULT NULL,
+                  PRIMARY KEY (`major_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="need">
+                CREATE TABLE `need` (
+                  `need_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `notes` varchar(255) DEFAULT NULL,
+                  `course_number` int(11) DEFAULT NULL,
+                  `course_section` int(11) DEFAULT NULL,
+                  `user_id` int(11) NOT NULL,
+                  `book_id` int(11) NOT NULL,
+                  PRIMARY KEY (`need_id`),
+                  KEY `RefUser27` (`user_id`),
+                  KEY `RefBook29` (`book_id`),
+                  CONSTRAINT `RefBook29` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`),
+                  CONSTRAINT `RefUser27` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="paired">
+                CREATE TABLE `paired` (
+                  `need_id` int(11) NOT NULL,
+                  `have_id` int(11) NOT NULL,
+                  `notes` varchar(255) DEFAULT NULL,
+                  PRIMARY KEY (`need_id`,`have_id`),
+                  KEY `RefHave26` (`have_id`),
+                  CONSTRAINT `RefHave26` FOREIGN KEY (`have_id`) REFERENCES `have` (`have_id`),
+                  CONSTRAINT `RefNeed22` FOREIGN KEY (`need_id`) REFERENCES `need` (`need_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="school">
+                CREATE TABLE `school` (
+                  `school_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) DEFAULT NULL,
+                  `street_address` varchar(255) DEFAULT NULL,
+                  `city` varchar(255) DEFAULT NULL,
+                  `state_id` int(11) NOT NULL,
+                  PRIMARY KEY (`school_id`),
+                  KEY `RefState6` (`state_id`),
+                  CONSTRAINT `RefState6` FOREIGN KEY (`state_id`) REFERENCES `state` (`state_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="state">
+                CREATE TABLE `state` (
+                  `state_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) DEFAULT NULL,
+                  `code` varchar(2) DEFAULT NULL,
+                  PRIMARY KEY (`state_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="user">
+                CREATE TABLE `user` (
+                  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `Rating` int(11) DEFAULT NULL,
+                  `password` varchar(255) DEFAULT NULL,
+                  `fname` varchar(255) DEFAULT NULL,
+                  `lname` varchar(255) DEFAULT NULL,
+                  `phone` int(11) DEFAULT NULL,
+                  `bio` varchar(255) DEFAULT NULL,
+                  `email` varchar(255) DEFAULT NULL,
+                  `school_id` int(11) NOT NULL,
+                  `grad_year` varchar(4) DEFAULT NULL,
+                  PRIMARY KEY (`user_id`),
+                  KEY `RefSchool7` (`school_id`),
+                  CONSTRAINT `RefSchool7` FOREIGN KEY (`school_id`) REFERENCES `school` (`school_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="user_major">
+                CREATE TABLE `user_major` (
+                  `user_id` int(11) NOT NULL,
+                  `major_id` int(11) NOT NULL,
+                  PRIMARY KEY (`user_id`,`major_id`),
+                  KEY `RefMajor25` (`major_id`),
+                  CONSTRAINT `RefMajor25` FOREIGN KEY (`major_id`) REFERENCES `major` (`major_id`),
+                  CONSTRAINT `RefUser24` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'bookexchange'
+    -->
+    <database name="bookexchange">
+        <!-- Table book -->
+        <!-- Table have -->
+        <!-- Table major -->
+        <!-- Table need -->
+        <!-- Table paired -->
+        <!-- Table school -->
+        <table name="school">
+            <column name="school_id">1</column>
+            <column name="name">Bradley University</column>
+            <column name="street_address">1501 W Bradley Ave</column>
+            <column name="city">Peoria</column>
+            <column name="state_id">17</column>
+        </table>
+        <!-- Table state -->
+        <table name="state">
+            <column name="state_id">1</column>
+            <column name="name">Alabama</column>
+            <column name="code">AL</column>
+        </table>
+        <table name="state">
+            <column name="state_id">2</column>
+            <column name="name">Alaska</column>
+            <column name="code">AK</column>
+        </table>
+        <table name="state">
+            <column name="state_id">3</column>
+            <column name="name">American Samoa</column>
+            <column name="code">AS</column>
+        </table>
+        <table name="state">
+            <column name="state_id">4</column>
+            <column name="name">Arizona</column>
+            <column name="code">AZ</column>
+        </table>
+        <table name="state">
+            <column name="state_id">5</column>
+            <column name="name">Arkansas</column>
+            <column name="code">AR</column>
+        </table>
+        <table name="state">
+            <column name="state_id">6</column>
+            <column name="name">California</column>
+            <column name="code">CA</column>
+        </table>
+        <table name="state">
+            <column name="state_id">7</column>
+            <column name="name">Colorado</column>
+            <column name="code">CO</column>
+        </table>
+        <table name="state">
+            <column name="state_id">8</column>
+            <column name="name">Connecticut</column>
+            <column name="code">CT</column>
+        </table>
+        <table name="state">
+            <column name="state_id">9</column>
+            <column name="name">Delaware</column>
+            <column name="code">DE</column>
+        </table>
+        <table name="state">
+            <column name="state_id">10</column>
+            <column name="name">District of Columbia</column>
+            <column name="code">DC</column>
+        </table>
+        <table name="state">
+            <column name="state_id">11</column>
+            <column name="name">Federated States of Micronesia</column>
+            <column name="code">FM</column>
+        </table>
+        <table name="state">
+            <column name="state_id">12</column>
+            <column name="name">Florida</column>
+            <column name="code">FL</column>
+        </table>
+        <table name="state">
+            <column name="state_id">13</column>
+            <column name="name">Georgia</column>
+            <column name="code">GA</column>
+        </table>
+        <table name="state">
+            <column name="state_id">14</column>
+            <column name="name">Guam</column>
+            <column name="code">GU</column>
+        </table>
+        <table name="state">
+            <column name="state_id">15</column>
+            <column name="name">Hawaii</column>
+            <column name="code">HI</column>
+        </table>
+        <table name="state">
+            <column name="state_id">16</column>
+            <column name="name">Idaho</column>
+            <column name="code">ID</column>
+        </table>
+        <table name="state">
+            <column name="state_id">17</column>
+            <column name="name">Illinois</column>
+            <column name="code">IL</column>
+        </table>
+        <table name="state">
+            <column name="state_id">18</column>
+            <column name="name">Indiana</column>
+            <column name="code">IN</column>
+        </table>
+        <table name="state">
+            <column name="state_id">19</column>
+            <column name="name">Iowa</column>
+            <column name="code">IA</column>
+        </table>
+        <table name="state">
+            <column name="state_id">20</column>
+            <column name="name">Kansas</column>
+            <column name="code">KS</column>
+        </table>
+        <table name="state">
+            <column name="state_id">21</column>
+            <column name="name">Kentucky</column>
+            <column name="code">KY</column>
+        </table>
+        <table name="state">
+            <column name="state_id">22</column>
+            <column name="name">Louisiana</column>
+            <column name="code">LA</column>
+        </table>
+        <table name="state">
+            <column name="state_id">23</column>
+            <column name="name">Maine</column>
+            <column name="code">ME</column>
+        </table>
+        <table name="state">
+            <column name="state_id">24</column>
+            <column name="name">Marshall Islands</column>
+            <column name="code">MH</column>
+        </table>
+        <table name="state">
+            <column name="state_id">25</column>
+            <column name="name">Maryland</column>
+            <column name="code">MD</column>
+        </table>
+        <table name="state">
+            <column name="state_id">26</column>
+            <column name="name">Massachusetts</column>
+            <column name="code">MA</column>
+        </table>
+        <table name="state">
+            <column name="state_id">27</column>
+            <column name="name">Michigan</column>
+            <column name="code">MI</column>
+        </table>
+        <table name="state">
+            <column name="state_id">28</column>
+            <column name="name">Minnesota</column>
+            <column name="code">MN</column>
+        </table>
+        <table name="state">
+            <column name="state_id">29</column>
+            <column name="name">Mississippi</column>
+            <column name="code">MS</column>
+        </table>
+        <table name="state">
+            <column name="state_id">30</column>
+            <column name="name">Missouri</column>
+            <column name="code">MO</column>
+        </table>
+        <table name="state">
+            <column name="state_id">31</column>
+            <column name="name">Montana</column>
+            <column name="code">MT</column>
+        </table>
+        <table name="state">
+            <column name="state_id">32</column>
+            <column name="name">Nebraska</column>
+            <column name="code">NE</column>
+        </table>
+        <table name="state">
+            <column name="state_id">33</column>
+            <column name="name">Nevada</column>
+            <column name="code">NV</column>
+        </table>
+        <table name="state">
+            <column name="state_id">34</column>
+            <column name="name">New Hampshire</column>
+            <column name="code">NH</column>
+        </table>
+        <table name="state">
+            <column name="state_id">35</column>
+            <column name="name">New Jersey</column>
+            <column name="code">NJ</column>
+        </table>
+        <table name="state">
+            <column name="state_id">36</column>
+            <column name="name">New Mexico</column>
+            <column name="code">NM</column>
+        </table>
+        <table name="state">
+            <column name="state_id">37</column>
+            <column name="name">New York</column>
+            <column name="code">NY</column>
+        </table>
+        <table name="state">
+            <column name="state_id">38</column>
+            <column name="name">North Carolina</column>
+            <column name="code">NC</column>
+        </table>
+        <table name="state">
+            <column name="state_id">39</column>
+            <column name="name">North Dakota</column>
+            <column name="code">ND</column>
+        </table>
+        <table name="state">
+            <column name="state_id">40</column>
+            <column name="name">Northern Mariana Islands</column>
+            <column name="code">MP</column>
+        </table>
+        <table name="state">
+            <column name="state_id">41</column>
+            <column name="name">Ohio</column>
+            <column name="code">OH</column>
+        </table>
+        <table name="state">
+            <column name="state_id">42</column>
+            <column name="name">Oklahoma</column>
+            <column name="code">OK</column>
+        </table>
+        <table name="state">
+            <column name="state_id">43</column>
+            <column name="name">Oregon</column>
+            <column name="code">OR</column>
+        </table>
+        <table name="state">
+            <column name="state_id">44</column>
+            <column name="name">Palau</column>
+            <column name="code">PW</column>
+        </table>
+        <table name="state">
+            <column name="state_id">45</column>
+            <column name="name">Pennsylvania</column>
+            <column name="code">PA</column>
+        </table>
+        <table name="state">
+            <column name="state_id">46</column>
+            <column name="name">Puerto Rico</column>
+            <column name="code">PR</column>
+        </table>
+        <table name="state">
+            <column name="state_id">47</column>
+            <column name="name">Rhode Island</column>
+            <column name="code">RI</column>
+        </table>
+        <table name="state">
+            <column name="state_id">48</column>
+            <column name="name">South Carolina</column>
+            <column name="code">SC</column>
+        </table>
+        <table name="state">
+            <column name="state_id">49</column>
+            <column name="name">South Dakota</column>
+            <column name="code">SD</column>
+        </table>
+        <table name="state">
+            <column name="state_id">50</column>
+            <column name="name">Tennessee</column>
+            <column name="code">TN</column>
+        </table>
+        <table name="state">
+            <column name="state_id">51</column>
+            <column name="name">Texas</column>
+            <column name="code">TX</column>
+        </table>
+        <table name="state">
+            <column name="state_id">52</column>
+            <column name="name">Utah</column>
+            <column name="code">UT</column>
+        </table>
+        <table name="state">
+            <column name="state_id">53</column>
+            <column name="name">Vermont</column>
+            <column name="code">VT</column>
+        </table>
+        <table name="state">
+            <column name="state_id">54</column>
+            <column name="name">Virgin Islands</column>
+            <column name="code">VI</column>
+        </table>
+        <table name="state">
+            <column name="state_id">55</column>
+            <column name="name">Virginia</column>
+            <column name="code">VA</column>
+        </table>
+        <table name="state">
+            <column name="state_id">56</column>
+            <column name="name">Washington</column>
+            <column name="code">WA</column>
+        </table>
+        <table name="state">
+            <column name="state_id">57</column>
+            <column name="name">West Virginia</column>
+            <column name="code">WV</column>
+        </table>
+        <table name="state">
+            <column name="state_id">58</column>
+            <column name="name">Wisconsin</column>
+            <column name="code">WI</column>
+        </table>
+        <table name="state">
+            <column name="state_id">59</column>
+            <column name="name">Wyoming</column>
+            <column name="code">WY</column>
+        </table>
+        <!-- Table user -->
+        <table name="user">
+            <column name="user_id">1</column>
+            <column name="Rating">NULL</column>
+            <column name="password">74b4a420d74b7b8428973218b511e8c0</column>
+            <column name="fname">Big</column>
+            <column name="lname">McLargeHuge</column>
+            <column name="phone">1112221111</column>
+            <column name="bio">This is the biography of Big McLargeHuge.  He is the height of 3 men, and has the strength of 5.  He is fast as a bullet, and more flexible than the world's greatest gymnast.</column>
+            <column name="email">bigNlarge@amazing.com</column>
+            <column name="school_id">1</column>
+            <column name="grad_year">2000</column>
+        </table>
+        <table name="user">
+            <column name="user_id">2</column>
+            <column name="Rating">NULL</column>
+            <column name="password">bce434f9560d9215c3c14f4b6e03d1c8</column>
+            <column name="fname">Jacob</column>
+            <column name="lname">Nash</column>
+            <column name="phone">1234567899</column>
+            <column name="bio">NULL</column>
+            <column name="email">jpnash@mail.bradley.edu</column>
+            <column name="school_id">1</column>
+            <column name="grad_year">2017</column>
+        </table>
+        <!-- Table user_major -->
+    </database>
+</pma_xml_export>
