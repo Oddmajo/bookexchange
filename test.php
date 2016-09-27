@@ -21,50 +21,7 @@
 	<?php 
 		require_once("connect.php");
 		
-		$fname = "test";
-		$lname = "num2";
-		$gradyear = "0";
-		$email = "test4@example.com";
-		$phone = "0123456789";
-		$passwordplain = "1Password";
-		$school = "1";
-		
-		$password = encryptPassword($passwordplain);
-		
-		$checks = "";
-		
-		$query = "SELECT user_id FROM user WHERE email = '{$email}' LIMIT 1";
-		$result = $conn->query($query);
-		$validEmail = $result->fetch_assoc();
-		if ($validEmail)
-			$checks = $checks . "1";
-		else
-			$checks = $checks . "0";
-		
-		if(checkPassword($passwordplain))
-			$checks = $checks . "0";
-		else
-			$checks = $checks . "1";
-
-		//if ($_POST["password"] !== $_POST["confirmPassword"])
-		//	$checks = $checks . "1";
-		//else
-			$checks = $checks . "0";
-		
-		if($checks!="000")
-		{
-			echo $checks;
-		}
-		else
-		{
-			$query = "INSERT INTO user (fname, lname, grad_year, email, phone, password, school_id) VALUES ('test', 'num1', '0', '{$email}', '{$phone}', '{$password}', '{$school}')";
-			$result = $conn->query($query);
-			if (!$result) 
-			{
-				echo $query . "\n";
-				throw new Exception("Database Error [{$conn->errno}] {$conn->error}");
-			}
-		}
+		echo 'Hello';
 		
 		
 	?>

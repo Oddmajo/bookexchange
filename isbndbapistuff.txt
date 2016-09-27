@@ -1,0 +1,5 @@
+a51d5550d07756c2836642c05618db3b librarythings devkey
+
+http://isbndb.com/api/v2/xml/C1ISCJUG/book/9780123748560
+
+key: C1ISCJUG
