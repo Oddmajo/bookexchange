@@ -21,9 +21,38 @@
 	<?php 
 		require_once("connect.php");
 		
-		echo 'Hello';
+		$xml=simplexml_load_file("http://isbndb.com/api/v2/xml/C1ISCJUG/book/9780123748560") or die("Error: Cannot load file");
+		//echo $xml->asXML();
+		
+		?>
+		<br><br><br>
+		<?php
 		
 		
+		foreach ($xml->children() as $child)
+		{
+			echo "Child node: " . $child->getName() . "<br>";
+		}
+		
+		?>
+		<br><br><br>
+		<?php
+		$i = 0;
+		while($xml->data[0]->author_data[$i])
+		{
+			echo $xml->data[0]->author_data[$i]->name . "<br>";
+			$i = $i + 1;
+		}
+		
+		echo $xml->data[0]->isbn10 . "<br>";
+		echo $xml->data[0]->isbn13 . "<br>";
+		echo $xml->data[0]->title . "<br>";
+		
+		
+		echo "End.";
 	?>
+
+
+
 
 </body>
