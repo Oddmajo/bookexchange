@@ -48,7 +48,8 @@ if (isset($_GET["submit"]))
 		$gradyear = $_POST["gradyear"];
 		$email = $_POST["email"];
 		$phone = $_POST["phone"];
-        $query = "INSERT INTO user (fname, lname, grad_year, email, phone, password, school_id) VALUES ('{$fname}', '{$lname}', '{$gradyear}', '{$email}', '{$phone}', '{$password}', '1')";
+		$major = $_POST["major"];
+        $query = "INSERT INTO user (fname, lname, grad_year, email, phone, password, major, school_id) VALUES ('{$fname}', '{$lname}', '{$gradyear}', '{$email}', '{$phone}', '{$password}', '{$major}', '1')";
 		//$query->bind_param("ssssss", $_POST["fname"], $_POST["lname"], $_POST["gradyear"], $_POST["email"], $_POST["phone"], $password);
 		//$result = $query->execute();
         $result = $conn->query($query);
@@ -109,6 +110,20 @@ if (isset($_GET["submit"]))
 						<div class="form-group>">
 							<label for="school">School:</label>
 							<br><p>Bradley University</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="major">Major:</label>
+								<select class="form-control" id="major">
+								<?php 
+									$query = "SELECT * FROM major"
+									$major = $conn->query($query);
+									while($row = $major->fetch_assoc())
+									{ ?>
+										<option><?php echo $row[major]; ?> </option>
+								<?php } ?>
+								</select>
 						</div>
 					</div>
 					<div class="col-md-6">
