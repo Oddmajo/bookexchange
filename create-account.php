@@ -94,54 +94,58 @@ if (isset($_GET["submit"]))
         require_once("navbar.php");
     ?>
     <div class="container" style="margin-top:100px;">
-		<?php if(isset($_GET["submit"])) { ?>
-			<div class="well">
-			tits
-			<ul>
-				<?php if($checks[0]==1) { ?>
-					<li> That email has been taken.</li>
-				<?php } if($checks[1]==1) { ?>
-					<li> Your Password is incorrect. Please make sure that you have at least one uppercase letter, at least one lowercase letter, and at least one number.  It should also be at least six characeters long.</li>
-				<?php } if($checks[2]==1) { ?>
-					<li> Your Passwords do not match.</li>
-				<?php } ?>
-			</ul>
-			</div>
-		<?php } ?>
-        <form action="?submit=1" method="post">
-			<div class="form-group">
-                <label for="fname">First Name:</label>
-                <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" maxlength="25" required>
-            </div>
-			<div class="form-group">
-                <label for="lname">Last Name:</label>
-                <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" maxlength="25" required>
-            </div>
-			<div class="form-group">
-                <label for="gradyear">Graduation Year:</label>
-                <input type="text" class="form-control" name="gradyear" id="gradyear" placeholder="Graduation Year" maxlength="25" required>
-            </div>
-			<div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" maxlength="70" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number:</label>
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number" maxlength="70" required>
-            </div>
-			<div class="well">
-				Your password must have at least one uppercase letter, at least one lowercase letter, and at least one number.  It should also be at least six characters long.
+		<div class="panel panel-default">
+			<div class="panel-body">
+			<form action="?submit=1" method="post" >
 				<div class="form-group">
-					<label for="password">Password:</label>
-					<input type="password" class="form-control" name="password" id="password" placeholder="Password" maxlength="25" required>
+					<label for="fname">First Name:</label>
+					<input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" maxlength="25" required>
 				</div>
 				<div class="form-group">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Password" maxlength="25" required>
-            </div>
+					<label for="lname">Last Name:</label>
+					<input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" maxlength="25" required>
+				</div>
+					<div class="col-md-6">
+						<div class="form-group>">
+							<label for="school">School:</label>
+							<br><p>Bradley University</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="gradyear">Graduation Year:</label>
+								<select class="form-control" id="gradyear">
+							<?php
+								$year = date("Y");
+								for($i = 0; $i < 7; $i++) { ?>
+									<option><?php echo $year + $i; ?></option>
+							<?php } ?>
+								</select>
+						</div>
+					</div>
+				<div class="form-group">
+					<label for="email">Email address:</label>
+					<input type="email" class="form-control" name="email" id="email" placeholder="Email Address" maxlength="70" required>
+				</div>
+				<div class="form-group">
+					<label for="phone">Phone Number:</label>
+					<input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number" maxlength="70" required>
+				</div>
+				<div class="well">
+					Your password must have at least one uppercase letter, at least one lowercase letter, and at least one number.  It should also be at least six characters long.
+					<div class="form-group">
+						<label for="password">Password:</label>
+						<input type="password" class="form-control" name="password" id="password" placeholder="Password" maxlength="25" required>
+					</div>
+					<div class="form-group">
+						<label for="confirmPassword">Confirm Password:</label>
+						<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Password" maxlength="25" required>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary">Create account</button>
+			</form>
 			</div>
-            <button type="submit" class="btn btn-primary">Create account</button>
-		</form>
+		</div>
     </div>
 
     <?php

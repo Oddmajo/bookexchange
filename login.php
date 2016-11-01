@@ -1,6 +1,9 @@
 <?php
 
-session_start();
+if(!isset($_SESSION)) 
+{
+	session_start();
+}
 /* $hostname="localhost";
 $username="dbadmin";
 $password="";//Lrz9RPVb7zPH2aTA";
@@ -42,7 +45,7 @@ if (isset($_GET['login'])) {
         exit;
     } else { ?>
         <!-- Tell the user their password was incorrect -->
-        <p>Wrong username or password!</p>
+        <p style="margin-top:100px">Wrong username or password!</p>
  <?php }
 }
 ?>
@@ -74,6 +77,7 @@ if (isset($_GET['login'])) {
     <?php
         include_once('navbar.php');
     ?>
+<div class="container" style="margin-top:100px;">
     <div class="content">
         <div class="content-column-center">
             <form class="form-signin" action="?login=1" method="post">
@@ -86,7 +90,7 @@ if (isset($_GET['login'])) {
             </form>
         </div>
     </div>
-
+</div>
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

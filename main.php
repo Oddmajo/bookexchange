@@ -28,9 +28,12 @@
 <div class="container" style="margin-top:100px;">
 	<div class="jumbotron">
 		<h1>BookExchange</h1>
-		<p>Hey man this here is some of the gnarliest stuff ever.  You can create a list of books you have, and people will pay you to share them! Or you can find books that you still need, and share them with the owner for a fraction of the price of buying them!!  That shit tight.</p>
+		<p>Share is a service that believes in the ability of students</p>
 	</div>
 	<div class="col-lg-6">
+		<?php
+			if(!isset($_SESSION['userId'])) {
+		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<a class="btn btn-primary btn-lg" href="login.php" style="width:100%">Login</a>
@@ -39,8 +42,19 @@
 				If you are returning, please login here.  You can continue to do amazeballs stuff with other people doing amazeballs stuff.
 			</div>
 		</div>
+		
+		<?php
+			} else {
+		?>
+		
+		<?php
+			}
+		?>
 	</div>
 	<div class="col-lg-6">
+		<?php
+			if(!isset($_SESSION['userId'])) {
+		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<a class="btn btn-primary btn-lg" href="create-account.php" style="width:100%">Create Account</a>
@@ -49,6 +63,13 @@
 				If this is your first time coming to this amazeballs site, create an account so you can do some amazeballs stuff - borrowing and lending books for profit.
 			</div>
 		</div>
+		<?php
+			} else {
+		?>
+		
+		<?php
+			}
+		?>
 	</div>
 </div>
 </body>

@@ -21,35 +21,32 @@
 	<?php 
 		require_once("connect.php");
 		
-		$xml=simplexml_load_file("http://isbndb.com/api/v2/xml/C1ISCJUG/book/9780123748560") or die("Error: Cannot load file");
+		$xml=simplexml_load_file("http://isbndb.com/api/v2/xml/C1ISCJUG/book/Data_Mining_practical_machine_learning_tools_and_techniques_") or die("Error: Cannot load file");
 		//echo $xml->asXML();
 		
 		?>
 		<br><br><br>
 		<?php
-		
-		
-		foreach ($xml->children() as $child)
-		{
-			echo "Child node: " . $child->getName() . "<br>";
-		}
-		
-		?>
-		<br><br><br>
-		<?php
+		// foreach ($xml->children() as $child)
+		// {
+			// echo "Child node: " . $child->getName() . "<br>";
+		// }
+		echo $xml->data[0]->title . "<br>";
 		$i = 0;
 		while($xml->data[0]->author_data[$i])
 		{
 			echo $xml->data[0]->author_data[$i]->name . "<br>";
 			$i = $i + 1;
 		}
-		
 		echo $xml->data[0]->isbn10 . "<br>";
 		echo $xml->data[0]->isbn13 . "<br>";
-		echo $xml->data[0]->title . "<br>";
-		
-		
 		echo "End.";
+		
+		$year = date("Y");
+		for($i = 0; $i < 4; $i++)
+		{
+			echo $year + $i;
+		}
 	?>
 
 
