@@ -99,49 +99,7 @@
 	}
 	?>
 	<hr>
-	<!--<div class="col-lg-4">
-		<div class="panel panel-default">
-			<div class="panel-heading">Paired</div>
-			<div class="panel-body">
-				
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<div class ="col-sm-4">
-								<!--<img src="images\eea.png">
-							</div>
-							<div class ="col-sm-4">
-								<ul class="listing">
-									<li>Owner</li>
-									
-								</ul>
-							</div>
-							<div class="col-sm-4">
-								<ul class="listing">
-								</ul>
-							<!--	<img style ="margin-top:25px" src="images\pencil.png">
-								<img style ="margin-top:25px" src="images\xbutton.png">
-							</div>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<div class ="col-lg-3">
-								<!--<img src="images\eea.png">
-							</div>
-							<div class ="col-sm-8">
-								Title </br>
-								Author </br>
-								ISBN </br>
-							</div>
-							<div class="col-lg-1">
-								<!--<img style ="margin-top:25px" src="images\pencil.png">
-								<img style ="margin-top:25px" src="images\xbutton.png">
-							</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>-->
+	
 	<div class="col-lg-6">
 		<div class="panel panel-default">
 			<div class="panel-heading">Need</div>
@@ -151,14 +109,16 @@
 						<div class ="col-lg-5">
 						</div>
 						<div class ="col-lg-2">
-							<button style="margin: px;" type="button" class="btn btn-primary">+</button>
+							<button type="button" class="btn btn-info">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
 						</div>
 						<div class="col-lg-5">
 						</div>
 					</div>
 				</div>
 				
-				<div class="panel panel-default">
+				<!--<div class="panel panel-default">
 					<div class="panel-body">
 						<div class ="col-sm-3">
 							<img src="images\eea.png">
@@ -174,24 +134,8 @@
 							<img style ="margin-top:25px" src="images\xbutton.png">
 						</div>
 					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<div class ="col-lg-3">
-								<img src="images\eea.png">
-						</div>
-						<div class ="col-sm-8">
-							<li>Title:</li>
-							<li>Edition</li>
-							<li>Author:</li>
-							<li>ISBN</li>
-						</div>
-						<div class="col-lg-1">
-							<img style ="margin-top:25px" src="images\pencil.png">
-							<img style ="margin-top:25px" src="images\xbutton.png">
-						</div>
-					</div>
-				</div>
+				</div>-->
+				
 			</div>
 		</div>
 	</div>
@@ -204,31 +148,16 @@
 						<div class ="col-lg-5">
 						</div>
 						<div class ="col-lg-2">
-							<button style="margin: px;" type="button" class="btn btn-primary">+</button>
+							<button type="button" class="btn btn-info">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
 						</div>
 						<div class="col-lg-5">
 						</div>
 					</div>
 				</div>
 				
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<div class ="col-sm-3">
-								<img src="images\eea.png">
-							</div>
-							<div class ="col-sm-8">
-								<li>Title:</li>
-								<li>Edition</li>
-								<li>Author:</li>
-								<li>ISBN</li>
-							</div>
-							<div class="col-sm-1">
-								<img style ="margin-top:25px" src="images\pencil.png">
-								<img style ="margin-top:25px" src="images\xbutton.png">
-							</div>
-					</div>
-				</div>
-				<div class="panel panel-default">
+				<!--<div class="panel panel-default">
 					<div class="panel-body">
 						<div class ="col-lg-3">
 								<img src="images\eea.png">
@@ -244,7 +173,8 @@
 								<img style ="margin-top:25px" src="images\xbutton.png">
 							</div>
 					</div>
-				</div>
+				</div>-->
+				
 			</div>
 		</div>
 	</div>

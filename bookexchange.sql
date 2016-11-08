@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2016 at 11:48 PM
+-- Generation Time: Nov 08, 2016 at 11:31 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -58,7 +58,65 @@ CREATE TABLE IF NOT EXISTS `have` (
 CREATE TABLE IF NOT EXISTS `major` (
   `major_id` int(11) NOT NULL,
   `major` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `major`
+--
+
+INSERT INTO `major` (`major_id`, `major`) VALUES
+(1, 'Accounting'),
+(2, 'Actuarial Science'),
+(3, 'Advertising'),
+(4, 'Art'),
+(5, 'Biochemistry'),
+(6, 'Biology'),
+(7, 'Chemistry'),
+(8, 'Civil Engineering'),
+(9, 'Communication'),
+(10, 'Computer Information Systems'),
+(11, 'Computer Science'),
+(12, 'Construction'),
+(13, 'Criminal Justice Studies'),
+(14, 'Dietetics'),
+(15, 'Education'),
+(16, 'Economics'),
+(17, 'Electrical Engineering'),
+(18, 'Family and Consumer Science'),
+(19, 'Finance'),
+(20, 'French'),
+(21, 'Health Science'),
+(22, 'History '),
+(23, 'Hospitality Leadership'),
+(24, 'Industrial Engineering'),
+(25, 'Interactive Media'),
+(26, 'International Business'),
+(27, 'International Studies'),
+(28, 'Journalism'),
+(29, 'Management and Leadership'),
+(30, 'Management Informational Systems'),
+(31, 'Manufacturing Engineering'),
+(32, 'Marketing'),
+(33, 'Mathematics'),
+(34, 'Mechanical Engineering'),
+(35, 'Medical Laboratory Science'),
+(36, 'Medical Terminology'),
+(37, 'Music'),
+(38, 'Music Business'),
+(39, 'Nursing'),
+(40, 'Philosophy'),
+(41, 'Physics'),
+(42, 'Political Science'),
+(43, 'Physical Therapy'),
+(44, 'Psychology'),
+(45, 'Public Relations'),
+(46, 'Religious Studies'),
+(47, 'Retail Merchandising'),
+(48, 'Spanish'),
+(49, 'Social Work'),
+(50, 'Sociology'),
+(51, 'Sports Communication'),
+(52, 'Theatre');
 
 -- --------------------------------------------------------
 
@@ -202,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(255) DEFAULT NULL,
   `school_id` int(11) NOT NULL,
   `grad_year` varchar(4) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -210,7 +268,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`user_id`, `Rating`, `password`, `fname`, `lname`, `phone`, `bio`, `email`, `school_id`, `grad_year`) VALUES
 (1, NULL, '74b4a420d74b7b8428973218b511e8c0', 'Big', 'McLargeHuge', 1112221111, 'This is the biography of Big McLargeHuge.  He is the height of 3 men, and has the strength of 5.  He is fast as a bullet, and more flexible than the world''s greatest gymnast.', 'bigNlarge@amazing.com', 1, '2000'),
-(2, NULL, 'bce434f9560d9215c3c14f4b6e03d1c8', 'Jacob', 'Nash', 1234567899, NULL, 'jpnash@mail.bradley.edu', 1, '2017');
+(2, NULL, 'bce434f9560d9215c3c14f4b6e03d1c8', 'Jacob', 'Nash', 1234567899, NULL, 'jpnash@mail.bradley.edu', 1, '2017'),
+(3, NULL, '4f3522843435962860bfd994851c9304', 'test', 'num1', 123456789, NULL, 'test4@example.com', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -299,7 +358,7 @@ ALTER TABLE `have`
 -- AUTO_INCREMENT for table `major`
 --
 ALTER TABLE `major`
-  MODIFY `major_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `major_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `need`
 --
@@ -319,7 +378,7 @@ ALTER TABLE `state`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --

@@ -96,7 +96,7 @@ if (isset($_GET["submit"]))
     ?>
     <div class="container" style="margin-top:100px;">
 		<div class="panel panel-default">
-			<div class="panel-body">
+			<div class="panel-body" style="margin:25px;">
 			<form action="?submit=1" method="post" >
 				<div class="form-group">
 					<label for="fname">First Name:</label>
@@ -106,27 +106,34 @@ if (isset($_GET["submit"]))
 					<label for="lname">Last Name:</label>
 					<input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" maxlength="25" required>
 				</div>
-					<div class="col-md-6">
+				<div class="container">
+					<div class="col-md-4">
 						<div class="form-group>">
 							<label for="school">School:</label>
 							<br><p>Bradley University</p>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<div class="form-group">
-							<label for="major">Major:</label>
+							<label for="major">Major:
+							<button type="button" class="btn btn-secondary btn-xs" data-toggle="tooltip" data-placement="right" title="The ability to add multiple majors coming soon.  Please list whatever major is most descriptive of your education." style="background:none;padding:0;margin:0;">
+								<span class="glyphicon glyphicon-question-sign"></span>
+							</button>
+							</label>
 								<select class="form-control" id="major">
 								<?php 
-									$query = "SELECT * FROM major"
+									$query = "SELECT * FROM major";
 									$major = $conn->query($query);
 									while($row = $major->fetch_assoc())
 									{ ?>
-										<option><?php echo $row[major]; ?> </option>
+										<option><?php echo $row['major']; ?> </option>
 								<?php } ?>
 								</select>
 						</div>
 					</div>
-					<div class="col-md-6">
+				</div>
+				<div class="container">
+					<div class="col-md-4">
 						<div class="form-group">
 							<label for="gradyear">Graduation Year:</label>
 								<select class="form-control" id="gradyear">
@@ -138,6 +145,7 @@ if (isset($_GET["submit"]))
 								</select>
 						</div>
 					</div>
+				</div>
 				<div class="form-group">
 					<label for="email">Email address:</label>
 					<input type="email" class="form-control" name="email" id="email" placeholder="Email Address" maxlength="70" required>
@@ -146,17 +154,24 @@ if (isset($_GET["submit"]))
 					<label for="phone">Phone Number:</label>
 					<input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number" maxlength="70" required>
 				</div>
-				<div class="well">
-					Your password must have at least one uppercase letter, at least one lowercase letter, and at least one number.  It should also be at least six characters long.
-					<div class="form-group">
-						<label for="password">Password:</label>
-						<input type="password" class="form-control" name="password" id="password" placeholder="Password" maxlength="25" required>
-					</div>
-					<div class="form-group">
-						<label for="confirmPassword">Confirm Password:</label>
-						<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Password" maxlength="25" required>
-					</div>
+					
+				<div class="form-group">
+					<label for="password">Password:
+						<button type="button" class="btn btn-secondary btn-xs" data-toggle="tooltip" data-placement="right" title="Your password must have at least one uppercase letter, at least one lowercase letter, and at least one number.  It should also be at least six characters long." style="background:none;padding:0;margin:0;">
+							<span class="glyphicon glyphicon-question-sign"></span>
+						</button>
+					</label>
+					<input type="password" class="form-control" name="password" id="password" placeholder="Password" maxlength="25" required>
 				</div>
+				<div class="form-group">
+					<label for="confirmPassword">Confirm Password:
+						<!--<button type="button" class="btn btn-secondary btn-xs" data-toggle="tooltip" data-placement="right" title="Password!" style="background:none;padding:0;margin:0;">
+							<span class="glyphicon glyphicon-question-sign"></span>
+						</button>-->
+					</label>
+					<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Password" maxlength="25" required>
+				</div>
+				
 				<button type="submit" class="btn btn-primary">Create account</button>
 			</form>
 			</div>

@@ -1,6 +1,7 @@
 <head>
     <!--<link href="navbar.css" rel="stylesheet" type="text/css">-->
     <link href='http://fonts.googleapis.com/css?family=Russo+One|Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+
 </head>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -12,19 +13,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="main.php">Book Exchange</a>
+            <a class="navbar-brand" href="main.php">CollegeShare</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
                 <li><a href="main.php">Home</a></li>
                 <li><a href="list.php">In-Demand</a></li>
-                <li class="dropdown">
-                    <a href="about.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="five-tool.php">More About Us</a></li>
-                    </ul>
-				</li>
 				<li>
 					<?php if(isset($_SESSION['email'])) { ?>
 						<a href="account.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account Actions<span class="caret"></span></a>
@@ -36,7 +30,14 @@
 					<?php } else { ?>
 						<a href="login.php">Sign In</a>
 					<?php } ?>
-					</li>
+				</li>
+				<li class="dropdown">
+                    <a href="about.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.php">Our Goal</a></li>
+                        <li><a href="agreement.php">User Agreement</a></li>
+                    </ul>
+				</li>
             </ul>
         </div>
     </div>
