@@ -48,6 +48,9 @@
 			echo $year + $i;
 		}
 		echo "<br><br><br><br><br>"
+		
+		$query = "SELECT * FROM major";
+		$major = $conn->query($query);
 	?>
 
 

@@ -45,7 +45,7 @@
 			Returning Textbooks
 		</div>
 		<div class="panel-body">
-			By renting a textbook through CollegeShare, you are agreeing to return it on or before the due date of May 14th.<b><font color="red">what about for fall semester</font></b>
+			By renting a textbook through CollegeShare, you are agreeing to return it on or before the due date of May 14th.
 After the first 30 days of the rental period, you may initiate a textbook return through the Your Textbook Rentals page in your CollegeShare account. We are not responsible for items that are lost in transit from you to us or for items that are sent to us in error.
 When we or the owner of the textbook receives a returned textbook, we will determine in our sole discretion if it is in acceptable rental condition. If the returned textbook is determined by us not to be in acceptable rental condition, we may in our sole discretion charge you the buyout price (calculated as the full purchase price of the textbook as of the time of rental, less any rental fees and extension fees you have already paid), and ship the textbook back to you to keep.
 

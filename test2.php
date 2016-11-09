@@ -44,38 +44,35 @@ if (isset($_GET["submit"]))
         $password = encryptPassword($_POST["password"]);
 		
 		$fname = $_POST["fname"];
+		echo $fname . "<br>";
 		$lname = $_POST["lname"];
+		echo $lname . "<br>";
 		$gradyear = $_POST["gradyear"];
+		echo $gradyear . "<br>";
 		$email = $_POST["email"];
+		echo $email . "<br>";
 		$phone = $_POST["phone"];
+		echo $phone . "<br>";
 		$major = $_POST["major"];
-        $query = "INSERT INTO user (fname, lname, grad_year, email, phone, password, school_id) VALUES ('{$fname}', '{$lname}', '{$gradyear}', '{$email}', '{$phone}', '{$password}', '1')";
-		//$query->bind_param("ssssss", $_POST["fname"], $_POST["lname"], $_POST["gradyear"], $_POST["email"], $_POST["phone"], $password);
-		//$result = $query->execute();
-        $result = $conn->query($query);
-		if (!$result) 
-		{
-			echo $query . "\n";
-			throw new Exception("Database Error [{$conn->errno}] {$conn->error}");
-		}
-			//AddError("An unknown error occurred when inserting your account details into the database.");
-		else
-			$success = true;
+		echo $major . "<br>";
 		
-		$query = "SELECT major_id, user_id FROM major, user WHERE major LIKE '{$major}' AND email = '{$email}'";
+		$query = "SELECT major_id FROM major WHERE major LIKE '{$major}'";
 		$result = $conn->query($query);
 		$row = $result->fetch_assoc();
-		
-		$query = "INSERT INTO user_major (user_id, major_id) VALUES ('{$row['user_id']}','{$row['major_id']}')";
-		$result = $conn->query($query);
-        if (!$result) 
-		{
-			echo $query . "\n";
-			throw new Exception("Database Error [{$conn->errno}] {$conn->error}");
-		}
+		echo $row['major_id'] . "<br>";
+        //$query = "INSERT INTO user (fname, lname, grad_year, email, phone, password, major, school_id) VALUES ('{$fname}', '{$lname}', '{$gradyear}', '{$email}', '{$phone}', '{$password}', '{$major}', '1')";
+		//$query->bind_param("ssssss", $_POST["fname"], $_POST["lname"], $_POST["gradyear"], $_POST["email"], $_POST["phone"], $password);
+		//$result = $query->execute();
+        //$result = $conn->query($query);
+		// if (!$result) 
+		// {
+			// echo $query . "\n";
+			// throw new Exception("Database Error [{$conn->errno}] {$conn->error}");
+		// }
 			//AddError("An unknown error occurred when inserting your account details into the database.");
-		else
-			$success = true;
+		// else
+			// $success = true;
+        
     }
 
     if ($success)
@@ -105,9 +102,6 @@ if (isset($_GET["submit"]))
 </head>
 
 <body>
-    <?php
-        require_once("navbar.php");
-    ?>
     <div class="container" style="margin-top:100px;">
 		<div class="panel panel-default">
 			<div class="panel-body" style="margin:25px;">
@@ -150,7 +144,7 @@ if (isset($_GET["submit"]))
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="gradyear">Graduation Year:</label>
-								<select class="form-control" id="gradyear" name="gradyear">
+								<select class="form-control" id="gradyear" name="gradyear"s>
 							<?php
 								$year = date("Y");
 								for($i = 0; $i < 7; $i++) { ?>
